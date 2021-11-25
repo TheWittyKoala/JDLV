@@ -1,0 +1,26 @@
+body {
+    padding: 20px;
+    background-color: #222;
+}
+
+#worldContainer {
+    padding-bottom: 10px;
+}
+
+table {
+    border: 1px solid rgb(255, 255, 255)
+}
+
+td {
+    width: 10px;
+    height: 10px;
+}
+
+td.dead {
+    background-color: transparent;
+}
+
+td.alive {
+    background-color: #df2d01;
+    border-radius: 10px;
+}
