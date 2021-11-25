@@ -1,7 +1,7 @@
 let columns = 200
 let rows = 63
 
-let ingame = false
+let running = false
 
 let timer
 let reproductionTime = 100
@@ -142,7 +142,7 @@ function setUpListeners() {
 }
 
 function randomizer() {
-	if (ingame) return;
+	if (running) return;
 
 	clear()
 
@@ -163,19 +163,19 @@ function randomizer() {
 }
 
 function start() {
-	if (!ingame) {
+	if (!running) {
 		this.innerHTML = "Pause"
-		ingame = true
+		running = true
 		play()
 	} else {
 		this.innerHTML = "Lancer"
-		ingame = false
+		running = false
 		clearTimeout(timer);
 	}
 }
 
 function clear() {
-  ingame = false
+  running = false
   clearTimeout(timer);
 
   let startBtn = document.getElementById("start")
@@ -198,7 +198,7 @@ function clear() {
 function play() {
 	nextGeneration()
 
-	if (ingame) {
+	if (running) {
 		timer = setTimeout(play, reproductionTime)
 	}
 }
